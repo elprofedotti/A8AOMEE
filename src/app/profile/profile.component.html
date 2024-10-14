@@ -1,0 +1,15 @@
+<ActionBar title="Perfil">
+  <NavigationButton icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
+</ActionBar>
+
+<ScrollView>
+  <StackLayout class="form">
+    <Image [src]="user.photoURL || 'res://default_avatar'" class="profile-image" [@fadeIn]></Image>
+    <Button text="Cambiar Foto" (tap)="onChangePhotoTap()" class="btn btn-outline"></Button>
+
+    <!-- ... (rest of the form remains the same) ... -->
+
+    <Button text="Guardar Cambios" (tap)="onSaveChanges()" class="btn btn-primary" [@buttonState]="buttonState"></Button>
+    <Button text="Cerrar Sesión" (tap)="onLogout()" class="btn btn-outline"></Button>
+  </StackLayout>
+</ScrollView>

@@ -1,0 +1,16 @@
+<ActionBar title="Notificaciones">
+  <NavigationButton icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
+</ActionBar>
+
+<ListView [items]="notifications" class="list-group">
+  <ng-template let-notification="item">
+    <GridLayout columns="auto, *" class="list-group-item">
+      <Label col="0" text="🔔" class="notification-icon"></Label>
+      <StackLayout col="1">
+        <Label [text]="notification.title" class="list-group-item-heading"></Label>
+        <Label [text]="notification.body" class="list-group-item-text" textWrap="true"></Label>
+        <Label [text]="notification.date | date:'short'" class="list-group-item-text text-muted"></Label>
+      </StackLayout>
+    </GridLayout>
+  </ng-template>
+</ListView>

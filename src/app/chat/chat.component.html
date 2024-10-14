@@ -1,0 +1,18 @@
+<ActionBar title="Chat">
+  <NavigationButton text="Back" android.systemIcon="ic_menu_back" (tap)="onBackTap()"></NavigationButton>
+</ActionBar>
+
+<GridLayout rows="*, auto">
+  <ListView row="0" [items]="messages" class="chat-list">
+    <ng-template let-item="item">
+      <StackLayout [class]="item.senderId === currentUserId ? 'message-sent' : 'message-received'" class="m-y-5">
+        <Label [text]="item.text" textWrap="true" class="message-text"></Label>
+        <Label [text]="item.timestamp | date:'short'" class="message-time text-right"></Label>
+      </StackLayout>
+    </ng-template>
+  </ListView>
+  <GridLayout row="1" columns="*, auto" class="input-bar">
+    <TextField col="0" [(ngModel)]="messageText" hint="Escribe un mensaje" returnKeyType="send" (returnPress)="onSendTap()" class="input"></TextField>
+    <Button col="1" text="Enviar" (tap)="onSendTap()" class="btn btn-primary btn-rounded-sm"></Button>
+  </GridLayout>
+</GridLayout>

@@ -1,0 +1,15 @@
+<ActionBar title="OFFER ME">
+  <NavigationButton icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
+</ActionBar>
+
+<GridLayout>
+  <ScrollView>
+    <StackLayout class="p-20">
+      <Label text="Bienvenido a OFFER ME" class="h1 text-center m-y-20"></Label>
+      <Button text="Buscar Productos" (tap)="onSearchTap()" class="btn btn-primary m-y-10"></Button>
+      <Button text="Ver Ofertas Cercanas" (tap)="onNearbyOffersTap()" class="btn btn-info m-y-10"></Button>
+      <Button text="Publicar Producto" (tap)="onPostProductTap()" class="btn btn-success m-y-10"></Button>
+      <Button text="NFT Marketplace" (tap)="onNFTMarketplaceTap()" class="btn btn-warning m-y-10"></Button>
+    </StackLayout>
+  </ScrollView>
+</GridLayout>

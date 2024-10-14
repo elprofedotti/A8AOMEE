@@ -1,0 +1,20 @@
+<ActionBar title="OFFER ME">
+  <NavigationButton visibility="collapsed"></NavigationButton>
+</ActionBar>
+
+<StackLayout class="page">
+  <StackLayout class="form" [formGroup]="form">
+    <StackLayout class="input-field">
+      <TextField class="input" hint="Email" keyboardType="email" autocorrect="false" autocapitalizationType="none" formControlName="email"></TextField>
+      <StackLayout class="hr-light"></StackLayout>
+    </StackLayout>
+
+    <StackLayout class="input-field">
+      <TextField class="input" hint="Contraseña" secure="true" formControlName="password"></TextField>
+      <StackLayout class="hr-light"></StackLayout>
+    </StackLayout>
+
+    <Button [text]="isLogin ? 'Iniciar sesión' : 'Registrarse'" (tap)="onSubmit()" class="btn btn-primary"></Button>
+    <Label [text]="isLogin ? '¿No tienes cuenta?' : '¿Ya tienes cuenta?'" class="login-label" (tap)="toggleForm()"></Label>
+  </StackLayout>
+</StackLayout>

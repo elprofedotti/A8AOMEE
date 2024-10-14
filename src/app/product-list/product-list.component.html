@@ -1,0 +1,25 @@
+<ActionBar title="Productos">
+  <NavigationButton icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
+</ActionBar>
+
+<GridLayout rows="auto, auto, *">
+  <GridLayout row="0" columns="*, auto" class="p-10">
+    <SearchBar col="0" hint="Buscar productos" (submit)="onSearch($event)"></SearchBar>
+    <Button col="1" text="Filtros" (tap)="showFilters()" class="btn btn-outline-primary"></Button>
+  </GridLayout>
+  
+  <GridLayout row="1" columns="*, *" class="p-10">
+    <DropDown col="0" [items]="sortOptions" [(ngModel)]="selectedSortOption" (selectedIndexChanged)="onSortChange($event)" hint="Ordenar por" class="m-r-5"></DropDown>
+    <Button col="1" [text]="sortOrder === 'asc' ? '↑' : '↓'" (tap)="toggleSortOrder()" class="btn btn-outline m-l-5"></Button>
+  </GridLayout>
+
+  <RadListView row="2" [items]="products" (itemTap)="onProductTap($event)">
+    <ng-template let-item="item">
+      <StackLayout class="product-item">
+        <Image [src]="item.imageUrl" class="product-image" height="200"></Image>
+        <Label [text]="item.name" class="product-name"></Label>
+        <Label [text]="'$' + item.price" class="product-price"></Label>
+      </StackLayout>
+    </ng-template>
+  </RadListView>
+</GridLayout>

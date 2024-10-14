@@ -1,0 +1,19 @@
+<RadSideDrawer>
+  <GridLayout tkDrawerContent rows="auto, *" class="sidedrawer-content">
+    <StackLayout row="0" class="sidedrawer-header">
+      <Label text="OFFER ME" class="sidedrawer-header-brand"></Label>
+    </StackLayout>
+    <ScrollView row="1">
+      <StackLayout class="sidedrawer-content">
+        <Label text="Inicio" [nsRouterLink]="['/home']" class="sidedrawer-list-item"></Label>
+        <Label text="Perfil" [nsRouterLink]="['/profile']" class="sidedrawer-list-item"></Label>
+        <Label text="Productos" [nsRouterLink]="['/products']" class="sidedrawer-list-item"></Label>
+        <Label text="Chat" [nsRouterLink]="['/chat']" class="sidedrawer-list-item"></Label>
+        <Label text="Notificaciones" [nsRouterLink]="['/notifications']" class="sidedrawer-list-item"></Label>
+        <Label text="Mapa" [nsRouterLink]="['/map']" class="sidedrawer-list-item"></Label>
+      </StackLayout>
+    </ScrollView>
+  </GridLayout>
+
+  <page-router-outlet tkMainContent></page-router-outlet>
+</RadSideDrawer>

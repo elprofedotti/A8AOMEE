@@ -1,0 +1,12 @@
+<div class="nft-marketplace">
+  <h2>NFT Marketplace</h2>
+  <div class="nft-grid">
+    <div *ngFor="let nft of nfts" class="nft-item">
+      <img [src]="nft.imageUrl" [alt]="nft.name">
+      <h3>{{ nft.name }}</h3>
+      <p>Token ID: {{ nft.tokenId }}</p>
+      <p>Price: {{ nft.price }} ETH</p>
+      <button (click)="buyNFT(nft)">Comprar NFT</button>
+    </div>
+  </div>
+</div>

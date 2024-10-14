@@ -1,0 +1,16 @@
+<ActionBar [title]="product?.name">
+  <NavigationButton text="Back" android.systemIcon="ic_menu_back" (tap)="onBackTap()"></NavigationButton>
+</ActionBar>
+
+<ScrollView>
+  <StackLayout class="product-detail">
+    <Image [src]="product?.imageUrl" class="product-image"></Image>
+    <Label [text]="product?.name" class="product-name"></Label>
+    <Label [text]="'$' + product?.price" class="product-price"></Label>
+    <Label [text]="'Precio sugerido: $' + suggestedPrice" class="suggested-price" *ngIf="suggestedPrice"></Label>
+    <Label [text]="product?.description" class="product-description"></Label>
+    <Button text="Contactar Vendedor" (tap)="onContactSellerTap()" class="btn btn-primary"></Button>
+    <Button text="Hacer Oferta (CQP)" (tap)="onMakeOfferTap()" class="btn btn-info"></Button>
+    <Button text="Compartir" (tap)="onShareTap()" class="btn btn-outline"></Button>
+  </StackLayout>
+</ScrollView>
